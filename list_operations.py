@@ -136,6 +136,7 @@ def custom_remove(input_list, value):
         if input_list[index] == value:
             del input_list[index]
             return input_list
+    return "Error: %r is not in list." % value
 
 
 def custom_pop(input_list):
@@ -149,6 +150,7 @@ def custom_index(input_list, value):
     for index in range(custom_len(input_list)):
         if input_list[index] == value:
             return index
+    return "Error: %r is not in list." % value
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
@@ -160,10 +162,10 @@ def custom_count(input_list, value):
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
-    input_list[::-1]
-    # for index in range(custom_len(input_list)):
-    #     input_list[index] = reverse[index]
-    # return input_list
+    reverse = input_list[::-1]
+    for index in range(custom_len(input_list)):
+        input_list[index] = reverse[index]
+    return input_list
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
